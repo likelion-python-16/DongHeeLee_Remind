@@ -12,6 +12,13 @@
 <a href="index.html">홈으로</a>
 <!--js-->
 <script>
+function changeColor(color){
+    document.getElementById("colorBox").style.backgroundColor =color;
+}
+document.getElementById("colorSelect").addEventListener("change",function(){
+    const selectcolor =this.value;
+    changeColor(selectcolor);//콜백형태
+})
 </script>
 </body>
 </html> 

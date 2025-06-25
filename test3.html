@@ -2,13 +2,20 @@
 <html>
 <body>
 <!--html-->
-<input type="text"id="name" placeholder="이름입력">
-<button id="changeBtn" class="my-button">제출</button>
+<form id="loginForm">
+    <input type="text"id="name" placeholder="이름입력">
+    <button type="submit">제출</button>
+</form>
 <br>
-<a href="index.html">홈으로</a>
+<div><a href="index.html">홈으로</a></div>
 
 <!--js-->
 <script>
+document.getElementById("loginForm").addEventListener("submit",function(e){
+    e.preventDefault();//페이지 새로고침막기
+    const name =document.getElementById("name").value;
+    alert("입력한 이름: " +name);
+});
 </script>
 </body>
 </html> 
