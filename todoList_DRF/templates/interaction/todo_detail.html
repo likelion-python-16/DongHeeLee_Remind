@@ -20,8 +20,15 @@
 </p>
 
 <h3>댓글 목록</h3>
-{% for comment in user_comments %}
-    <p>{{ comment.user.username }}: {{ comment.content }}</p>
-{% empty %}
-    <p>작성한 댓글이 없습니다.</p>
-{% endfor %}
+<ul>
+  {% for comment in comments %}
+    <li>
+      <strong>{{ comment.user.username }}</strong>:
+      {{ comment.content }}
+      <br>
+      <small>{{ comment.created_at }}</small>
+    </li>
+  {% empty %}
+    <li>댓글이 아직 없습니다.</li>
+  {% endfor %}
+</ul>
