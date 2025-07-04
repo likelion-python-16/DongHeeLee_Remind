@@ -43,8 +43,8 @@ class MusinsaAPI():
                 "brand": g.get("brandName", ""),
                 "normalPrice": f"{g.get('normalPrice', 0)}원",
                 "saleprice": f"{g.get('price', 0)}원",
-                "linkUrl": "https://api.musinsa.com/" + g.get("goodsLinkUrl", ""),
-                "imageUrl": g.get("imageUrl", ""), 
+                "linkUrl": g.get("goodsLinkUrl", ""),
+                "imageUrl": g.get("thumbnail", ""), 
             })  
         return result
     
@@ -53,4 +53,19 @@ if __name__=="__main__":
     items = api.fetch()
     for idx, item in enumerate(items,start=1):
         print(f"{idx}.{item['name']} - {item['saleprice']} {item['imageUrl']}{item['linkUrl']}")
+
+if __name__=="__main__":
+    api = MusinsaAPI(keyword="반팔",size=5)
+    items = api.fetch()
+    for idx, item in enumerate(items,start=1):
+        print(f"{idx}.{item['name']} - {item['saleprice']} {item['imageUrl']}{item['linkUrl']}")  
+if __name__=="__main__":
+    api = MusinsaAPI(keyword="티셔츠",size=5)
+    items = api.fetch()
+    for idx, item in enumerate(items,start=1):
+        print(f"{idx}.{item['name']} - {item['saleprice']} {item['imageUrl']}{item['linkUrl']}")
+
+
+   
+
    
