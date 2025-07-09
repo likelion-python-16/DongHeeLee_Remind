@@ -3,7 +3,7 @@ load_dotenv()
 import os
 import discord
 from scraper import MusinsaAPI
- 
+
 #---Discord 봇 기본설정----
 intents = discord.Intents.default()
 intents.message_content=True #메시지 내용을 읽어오기 위한 권한설정
