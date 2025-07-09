@@ -36,7 +36,7 @@ router.register("view", TodoViewSet, basename="todo")
 
 
 urlpatterns = [
-    # path("list/", views.todo_list, name="todo_List"), # list 목록보기 
+    # path("list/", views.todo_list, name="todo_List"), # list 목록보기 d
 
     # 탬플릿Views
     path("list/", views.TodoListViews.as_view(), name="todo_List"), # list 목록보기
